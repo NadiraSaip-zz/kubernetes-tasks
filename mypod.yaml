@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test
+  namespace: test
+spec:
+  containers:
+  - name: container1
+    image: busybox
+    args:
+    - /bin/sh
+    - -c
+    - echo "Hello"; sleep 1000 # with sleep it ll die after 1000 seconds and it will create it again
+    resources:
+      limits:
+        cpu: 200m
+        memory: "1Gi"
