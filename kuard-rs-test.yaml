@@ -1,3 +1,5 @@
+#testing HPA and endpoints
+
 apiVersion: extensions/v1beta1
 kind: ReplicaSet
 metadata:
