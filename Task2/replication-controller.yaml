@@ -9,7 +9,7 @@ template:
     labels:
       name: nginx-test
   spec:
-    container:
+    containers:
     - name: nginx
       image: nginx
       ports:
