@@ -7,7 +7,7 @@ metadata:
 template:
   name: nginx
   labels:
-    app: nginx-test
+    name: nginx-test
   spec:
     container:
     - name: nginx
