@@ -4,6 +4,9 @@ metadata:
   name: nginx 
   labels:
     name: nginx-test
+
+selector:
+  name: nginx-test
 template:
   metadata:
     labels:
