@@ -1,17 +1,17 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: ngnix
+  name: nginx 
   labels:
-    name: ngnix-test
+    name: nginx-test
 template:
-  name: ngnix
+  name: nginx
   labels:
-    app: ngnix-test
+    app: nginx-test
   spec:
     container:
-    - name: ngnix
-      image: ngnix
+    - name: nginx
+      image: nginx
       pprts:
       - containerPort: 80
       
