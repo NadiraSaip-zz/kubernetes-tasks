@@ -13,4 +13,9 @@ spec:
   containers:
   - name: daemonset-ds
     image: ubuntu
+    args:
+    - /bin/bash
+    - c
+    - sleep 1000
     
+
