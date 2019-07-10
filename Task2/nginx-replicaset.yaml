@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: ReplicaSet
+metadata:
+  name: task2
+  labels:
+    name: nginx-dns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      task: two
+  template:
+    metadata:
+      labels:
+        task: two
+    spec:
+      containers:
+      - name: nginx-dns
+        image: nginx
+        
+        
