@@ -4,15 +4,15 @@ metadata:
   name: nginx-dns
   labels:
     name: nginx-dns
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      task: two
-  template:
-    metadata:
-      labels:
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
         task: two
+    template:
+      metadata:
+        labels:
+          task: two
     spec:
       containers:
       - name: nginx-dns
@@ -34,7 +34,7 @@ subsets:
       - ip: 34.67.164.42
 
     ports:
-    
+
   
 
 
