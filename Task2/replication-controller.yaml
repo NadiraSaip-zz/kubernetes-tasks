@@ -4,16 +4,19 @@ metadata:
   name: nginx 
   labels:
     name: nginx-test
-selector:
-  name: nginx-test
-template:
-  metadata:
-    labels:
-      name: nginx-test
 spec:
-  containers:
-  - name: nginx
-    image: nginx
-    ports:
-    - containerPort: 80
+  replicas: 1 
+  selector: 
+    name: nginx-test
+  template:
+    metadata:
+      labels:
+        name: nginx-test
+
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
       
