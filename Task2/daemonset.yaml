@@ -10,12 +10,12 @@ spec:
     metadata:
       labels:
         name: ubuntu       
-  containers:
-  - name: daemonset-ds
-    image: ubuntu
-    args:
-    - /bin/bash
-    - c
-    - sleep 1000
-    
+    spec:
+      containers:
+      - name: daemonset-task
+        image: ubuntu
+        command: ["/bin/bash", "-c"]
+        args:
+        - sleep 1000
+
 
