@@ -10,5 +10,4 @@ spec:
    name: k8-service
   ports:
     - port: 80
-
     

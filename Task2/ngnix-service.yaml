@@ -4,7 +4,7 @@ metadata:
   name: ngnix-svc
 spec:
   selector:
-    ngnix: rc
+    ngnix: nginx-test
   ports:
   - protocol: TCP
     port: 80
