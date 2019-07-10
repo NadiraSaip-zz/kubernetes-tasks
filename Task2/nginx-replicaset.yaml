@@ -3,7 +3,7 @@ kind: ReplicaSet
 metadata:
   name: task2-nginx-dns
   labels:
-    name: nginx-dns
+    name: nginx-dns-2
 spec:
   replicas: 1
   selector:
@@ -15,7 +15,7 @@ spec:
         task: two
     spec:
       containers:
-      - name: nginx-dns
+      - name: nginx-dns-2
         image: nginx
 ---
 apiVersion: v1
