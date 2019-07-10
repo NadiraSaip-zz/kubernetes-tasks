@@ -12,6 +12,6 @@ template:
     container:
     - name: nginx
       image: nginx
-      pprts:
+      ports:
       - containerPort: 80
       
