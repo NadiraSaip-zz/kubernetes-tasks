@@ -17,5 +17,19 @@ spec:
       containers:
       - name: nginx-dns
         image: nginx
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-dns
+spec:
+  clusterIP: none
+  ports:
+  - name: nginx-dns
+    port: 80
+    targetPort: 8080
+  
+
+
         
         
