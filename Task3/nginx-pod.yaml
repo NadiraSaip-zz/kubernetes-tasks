@@ -4,7 +4,6 @@ metadata:
   name: nginx-pod 
 spec:
   container: 
-  - name: nginx
     image: nginx:1.14.0
     name: nginx-pod
     volumeMounts:
