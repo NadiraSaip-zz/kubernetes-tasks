@@ -23,13 +23,4 @@ spec:
       #  volumeMounts:
        # - mountPath: /var/www/html
         #  name: my-vol                    
-        env:
-          - name: WORDPRESS_DB_PASSWORD
-            value: mysql
-          - name: WORDPRESS_DB_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: mysql-pass
-                key: password
- 
-                     
+        
