@@ -1,27 +1,33 @@
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: ReplicaSet
 metadata:
   name: mysql
+  labels:
+    app: wordpress
+    tier: mysql
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app: mysql
-  serviceName: mysql
-  replicas: 1
+      app: wordpress
+      tier: mysql
   template:
     metadata:
       labels:
-        app: mysql
+        app: wordpress
+        tier: mysql
     spec:
-      initContainers:
-      - name: init-mysql
-        image: mysql 
+      containers:
+      - name: mysql
+        image: mysql:5.6
         env:
-          - name: WORDPRESS_DB_PASSWORD
-            value: mysql
-          - name: WORDPRESS_DB_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: mysql-pass
-                key: password
-           
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
+        livenessProbe:
+          tcpSocket:
+            port: 3306
+        ports:
+        - containerPort: 3306
